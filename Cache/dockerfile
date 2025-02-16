@@ -1,0 +1,7 @@
+FROM nginx:latest
+
+
+RUN apt-get update && apt-get -y upgrade
+
+RUN echo '<html><body><h1>Hello, World! segundo commit</h1></body></html>' > /usr/share/nginx/html/index.html
+

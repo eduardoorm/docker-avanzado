@@ -1,0 +1,3 @@
+FROM nginx:latest
+
+RUN echo '<html> <body> <h1>Mi pagina de inicio personalizada en su tercera version</h1> </body> </html>' > /usr/share/nginx/html/index.html
