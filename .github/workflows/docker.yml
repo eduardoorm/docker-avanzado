@@ -23,3 +23,9 @@ jobs:
         run: docker build  --platform linux --tag ${{ secrets.DOCKERHUB_USERNAME }}/backenddockerci:latest  -f CI/Dockerfile .
       - name: Push the Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/backenddockerci:latest
+      - name: Authenticate to Azure
+        uses: azure/webapps-deploy@v2 
+        with: 
+          app-name: 'eduwebapp' 
+          publish-profile: ${{ secrets.AZUE_WEBAPP_PUBLISH_PROFILE }} 
+          images: 'eduardoorm/gdgica:latest'
